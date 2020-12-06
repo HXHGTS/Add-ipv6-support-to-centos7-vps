@@ -4,7 +4,7 @@
 
 1.打开HE隧道，[申请账号](https://tunnelbroker.net/)
 
-2.创建Regular Tunnel，输入服务器外网ipv4地址
+2.创建Regular Tunnel，输入服务器公网ipv4地址
 
 3.选择离服务器最近的网关服务器(香港服务器貌似不可用)，确定
 ```
