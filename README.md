@@ -61,8 +61,12 @@ ip addr add 本机申请的ipv6地址/64 dev he-ipv6
 ip route add ::/0 dev he-ipv6
 ip -f inet6 addr
 ```
-5.ssh连接服务器，配置ipv6支持(汉字注意替换成自己的内容)
+5.ssh连接服务器，配置ipv6支持(汉字注意替换成自己的内容)(bash执行)
 ```
+echo 'net.ipv6.conf.all.disable_ipv6 = 0' >> /etc/sysctl.conf
+echo 'net.ipv6.conf.default.disable_ipv6 = 0' >> /etc/sysctl.conf
+echo 'net.ipv6.conf.eth0.disable_ipv6 = 0' >> /etc/sysctl.conf
+echo 'net.ipv6.conf.lo.disable_ipv6 = 0' >> /etc/sysctl.conf
 echo 'IPV6ADDR=HE隧道IPV6网关' >> /etc/sysconfig/network-scripts/ifcfg-eth0
 echo 'ONBOOT=yes' > /etc/sysconfig/network-scripts/ifcfg-sit1
 echo 'DEVICE=sit1' >> /etc/sysconfig/network-scripts/ifcfg-sit1
